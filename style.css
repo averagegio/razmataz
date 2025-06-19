@@ -1,0 +1,308 @@
+/* Base Styles */
+:root {
+    --primary-color: #5b3cc4;
+    --secondary-color: #7857d4;
+    --background-dark: #1a1a1a;
+    --surface-dark: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --border-radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+}
+
+.app-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Navigation Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--surface-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left h1 {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    position: relative;
+    padding: var(--spacing-sm);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.filter-options {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.filter-btn {
+    background: var(--surface-dark);
+    border: none;
+    color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+/* Video Grid Styles */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Sidebar Styles */
+.right-sidebar {
+    background-color: var(--surface-dark);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-section h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--surface-dark);
+    display: flex;
+    justify-content: space-around;
+    padding: var(--spacing-sm);
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    transition: var(--transition);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.record-btn {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: var(--spacing-sm);
+    margin-top: -30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.record-btn span {
+    font-size: 32px;
+    color: white;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--surface-dark);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    padding: var(--spacing-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.recording-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+#videoPreview {
+    width: 100%;
+    height: 300px;
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius);
+}
+
+.recording-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.record-control {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#startRecording {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#stopRecording {
+    background-color: #dc3545;
+    color: white;
+}
+
+#stopRecording:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.recording-options {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--background-dark);
+    border: none;
+    color: var(--text-secondary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.option-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+} 
