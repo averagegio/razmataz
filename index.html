@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceVid - Social Video Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container dark-theme">
+        <!-- Main Navigation -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <h1>VoiceVid</h1>
+            </div>
+            <div class="nav-right">
+                <button class="icon-btn search-btn">
+                    <span class="material-icons-round">search</span>
+                </button>
+                <button class="icon-btn notifications-btn">
+                    <span class="material-icons-round">notifications</span>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Profile">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Video Feed -->
+            <section class="video-feed">
+                <div class="section-header">
+                    <h2>Trending Videos</h2>
+                    <div class="filter-options">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Following</button>
+                        <button class="filter-btn">Popular</button>
+                    </div>
+                </div>
+
+                <div class="video-grid" id="videoGrid">
+                    <!-- Video cards will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <div class="sidebar-section">
+                    <h3>Live Now</h3>
+                    <div class="live-sessions" id="liveSessions">
+                        <!-- Live sessions will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Suggested Creators</h3>
+                    <div class="creator-list" id="creatorList">
+                        <!-- Creators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">
+                <span class="material-icons-round">home</span>
+                <span>Home</span>
+            </button>
+            <button class="nav-item">
+                <span class="material-icons-round">explore</span>
+                <span>Discover</span>
+            </button>
+            <button class="nav-item record-btn">
+                <span class="material-icons-round">add_circle</span>
+            </button>
+            <button class="nav-item">
+                <span class="material-icons-round">chat</span>
+                <span>Messages</span>
+            </button>
+            <button class="nav-item">
+                <span class="material-icons-round">person</span>
+                <span>Profile</span>
+            </button>
+        </nav>
+
+        <!-- Recording Modal -->
+        <div class="modal" id="recordingModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Create New Video</h3>
+                    <button class="close-btn">
+                        <span class="material-icons-round">close</span>
+                    </button>
+                </div>
+                <div class="recording-container">
+                    <video id="videoPreview" autoplay muted></video>
+                    <div class="recording-controls">
+                        <button id="startRecording" class="record-control">
+                            <span class="material-icons-round">mic</span>
+                            Start Recording
+                        </button>
+                        <button id="stopRecording" class="record-control" disabled>
+                            <span class="material-icons-round">stop</span>
+                            Stop Recording
+                        </button>
+                    </div>
+                    <div class="recording-options">
+                        <button class="option-btn">
+                            <span class="material-icons-round">music_note</span>
+                            Add Music
+                        </button>
+                        <button class="option-btn">
+                            <span class="material-icons-round">filter</span>
+                            Filters
+                        </button>
+                        <button class="option-btn">
+                            <span class="material-icons-round">text_fields</span>
+                            Add Text
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
